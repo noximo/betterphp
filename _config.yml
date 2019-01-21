@@ -17,7 +17,7 @@ title: BetterPHP.net
 email: pospisilt@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Collection of articles, blog posts, tweets and videos about PHP development
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/betterphp" # the subpath of your site, e.g. /blog
 url: "https://noximo.github.io/betterphp/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: noximo
 github_username:  noximo
