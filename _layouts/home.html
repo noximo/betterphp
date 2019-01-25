@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+    {{ content }}
+
+    {%- if site.posts.size > 0 -%}
+    <h1>{{ page.list_title | default: "Latest posts" }}</h1>
+
+    {%- for post in site.posts -%}
+    <div class="post">
+        {% if post.externalLink %}
+        <a href="{{ post.externalLink }}">{{ post.title }}
+            <small> ({{ post.externalLink }})</small>
+        </a>
+        {% else %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% endif %}
+        <div>{{ post.excerpt }}</div>
+    </div>
+    {%- endfor -%}
+
+    {%- endif -%}
+
+</div>

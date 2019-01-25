@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1e1e1e;
+}
+
+h1 {
+    margin: 0 10px;
+}
+
+header {
+    grid-area: header;
+    background-color: #261b0d;
+    padding: 15px;
+}
+
+#description {
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+
+#header {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2em;
+    display: block;
+
+}
+
+footer {
+    grid-area: footer;
+    background-color: #261b0d;
+    text-align: center;
+    color: white;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+
+nav {
+    grid-area: nav;
+    background-color: #261b0d;
+}
+
+nav a {
+    color: white;
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+    text-align: center;
+    padding: 15px;
+
+    display: block;
+}
+
+nav a:hover, nav a:active {
+    color: black;
+    background-color: white;
+}
+
+main {
+    grid-area: main;
+    padding: 15px;
+    background-color: #f4eade;
+}
+
+.post {
+    margin: 10px;
+}
+
+.post p {
+    margin: 5px 0 10px 0;
+}
+
+.post a {
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-columns: 2fr 8fr;
+    grid-template-areas: "header main" "nav main" "footer main";
+    width: 100vw;
+    height: 100vh;
+}

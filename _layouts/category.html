@@ -2,12 +2,17 @@
 layout: default
 ---
 
-<div class="blog list">
-    <h1>Filed Under
-        <small>#{{ page.tag }}</small>
-    </h1>
+<div class="home">
+    <h1> {{ page.name }} </h1>
 
     {% for post in site.categories[page.tag] %}
-    {{post.permalink}}
+
+    {% if post.externalLink %}
+    <a href="{{ post.externalLink }}">{{ post.title }} <small>({{ post.externalLink }})</small></a>
+    {% else %}
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% endif %}
+
+    <div>{{ post.excerpt }}</div>
     {% endfor %}
 </div>
