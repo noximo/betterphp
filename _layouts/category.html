@@ -2,17 +2,23 @@
 layout: default
 ---
 
-<div class="home">
-    <h1> {{ page.name }} </h1>
+<div class="category">
+
+    <header class="post-header">
+        <h1 class="post-title">{{ page.name | escape }}</h1>
+    </header>
 
     {% for post in site.categories[page.tag] %}
+    <article>
+        {% if post.externalLink %}
+        <a href="{{ post.externalLink }}">{{ post.title }}
+            <small>({{ post.externalLink }})</small>
+        </a>
+        {% else %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% endif %}
 
-    {% if post.externalLink %}
-    <a href="{{ post.externalLink }}">{{ post.title }} <small>({{ post.externalLink }})</small></a>
-    {% else %}
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    {% endif %}
-
-    <div>{{ post.excerpt }}</div>
+        <div>{{ post.content }}</div>
+    </article>
     {% endfor %}
 </div>

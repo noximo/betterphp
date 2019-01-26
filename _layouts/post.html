@@ -2,7 +2,10 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+</header>
+
 <div class="tags">
     {% assign sortedCategories = page.categories | sort %}
     {% for category in sortedCategories %}
@@ -12,20 +15,21 @@ layout: default
     {% endfor %}
 </div>
 
-{{ content }}
-
+<article>
+    {{ content }}
+</article>
 <div class="related">
     <h3>Related Posts</h3>
     {% assign firstCategory = page.categories | first %}
     {% assign relatedCount = 0 %}
     {% for related in site.categories[firstCategory] %}
-        {% unless page.permalink == related.permalink %}
-            {% assign relatedCount = relatedCount | plus: 1 %}
-            <a href="{{related.permalink}}">{{ related.title }}</a>
-        {% endunless %}
+    {% unless page.permalink == related.permalink %}
+    {% assign relatedCount = relatedCount | plus: 1 %}
+    <a href="{{related.permalink}}">{{ related.title }}</a>
+    {% endunless %}
 
-        {% if relatedCount == 3 %}
-            {% break %}
-        {% endif %}
+    {% if relatedCount == 3 %}
+    {% break %}
+    {% endif %}
     {% endfor %}
 </div>

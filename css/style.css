@@ -7,6 +7,7 @@ body {
 
 h1 {
     margin: 0 10px;
+    font-size: 1.5em;
 }
 
 header {
@@ -27,6 +28,7 @@ header {
     text-align: center;
     font-size: 2em;
     display: block;
+    padding: 15px;
 
 }
 
@@ -75,13 +77,26 @@ main {
     padding: 15px;
     background-color: #f4eade;
 }
+.category article{
+    margin: 20px;
+    display: list-item;
+}
+
+.category article a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.category article p{
+    margin: 5px 0;
+}
 
 .post {
     margin: 10px;
 }
 
 .post p {
-    margin: 5px 0 10px 0;
+    margin: 5px 0 5px 0;
 }
 
 .post a {
@@ -101,4 +116,16 @@ footer {
     grid-template-areas: "header main" "nav main" "footer main";
     width: 100vw;
     height: 100vh;
+}
+.post-title{
+    color: white;
+    /* background-color: white; */
+}
+.post-content{
+    color: black;
+}
+.post-content a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
 }
