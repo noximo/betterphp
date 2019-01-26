@@ -19,7 +19,7 @@ layout: default
         {% else %}
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         {% endif %}
-        <div>{{ post.excerpt }}</div>
+        <div>{{ post.content }}</div>
     </article>
     {%- endfor -%}
 
